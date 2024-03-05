@@ -1,12 +1,4 @@
 <?php
-//task 1
-echo "task 1\n";
-
-$very_bad_unclear_name = "15 chicken wings";
-$order = &$very_bad_unclear_name;
-$order .= " and shefburger";
-echo "Your order is: $very_bad_unclear_name.\n";
-
 //task 2
 echo "\ntask 2\n";
 
@@ -21,5 +13,4 @@ echo 6 + 6 . "\n";
 $lastMonth = 1187.23;
 $thisMonth = 1089.98;
 echo $lastMonth - $thisMonth . "\n";
-
 
