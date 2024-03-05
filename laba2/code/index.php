@@ -39,4 +39,17 @@ echo "\ntask 12\n";
 $squared = 8 ** 2;
 echo "8^2 = $squared\n";
 
+//task 13
+echo "\ntask 13\n";
+
+$myNum = 52;
+$answer = $myNum;
+$answer += 2;
+$answer *= 2;
+$answer -= 2;
+$answer /= 2;
+$answer -= $myNum;
+echo "answer $answer\n";
+
+
 
