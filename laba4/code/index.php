@@ -16,7 +16,7 @@
             <label for="category">Category</label>
             <select name="category" required>
             	<?php
-		$list = ['cars', 'food', 'drink', 'other']
+		$list = ['cars', 'food', 'drink', 'other'];
 		for ($i = 0; $i < count($list); $i++)
 		{?>
 		    <option value=<?php echo $list[$i];?>><?php echo $list[$i];?></option>
