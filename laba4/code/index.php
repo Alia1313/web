@@ -41,7 +41,33 @@
             	<th>Description</th>
             </thead>
             <tbody>
-                
+                <?php
+                    include 'vendor/autoload.php';
+                    $client = new Google_Client();
+		    $client->setApplicationName('Google Sheets API');
+		    $client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
+		    $client->setAccessType('offline');
+		    $path = "civil-density-421619-c45e530196f3.json";
+		    $client->setAuthConfig($path);
+		    $service = new Google_Service_Sheets($client);
+		    $spreadsheetId = '1J2LJpuwXbOBdOPKgF-SjFpIg5fpfy4NubTCXRCetG1s';
+		    $spreadsheet = $service->spreadsheets->get($spreadsheetId);
+		    $range = 'Sheet1'; // here we use the name of the Sheet to get all the rows
+		    $response = $service->spreadsheets_values->get($spreadsheetId, $range);
+		    $values = $response->getValues();
+		    if (!is_null($values)) {
+		        foreach ($values as $line) {?>
+		        <tr>
+		            <?php
+		            foreach ($line as $val) {?>
+			        <td><?php echo $val;?></td>
+			        <?php
+		            }?>
+		        </tr>
+		        <?php
+		        }
+		    }
+	 	?>
             </tbody>
         </table>
     </div>
